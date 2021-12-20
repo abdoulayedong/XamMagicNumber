@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagicNumber.App">
+    <Application.Resources>
+        <Color x:Key="MainColor">#f5bf21</Color>
+        <Color x:Key="SecondaryColor">#d8ac1c</Color>
+        <Color x:Key="TextColor">#584d39</Color>
+        <Color x:Key="TextButtonColor">#fefefe</Color>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="TextColor" Value="{StaticResource TextButtonColor}"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}"/>
+        </Style>
+    </Application.Resources>
+</Application>

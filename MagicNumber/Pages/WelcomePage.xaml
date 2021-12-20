@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagicNumber.Pages.WelcomePage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:MagicNumber.PageModels"
+             BackgroundColor="{StaticResource MainColor}">
+    <ContentPage.BindingContext>
+        <vm:WelcomePageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">                
+                <Label Text="Le Nombre Magique" FontSize="50"
+                       WidthRequest="300" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,50" VerticalOptions="Center"/>
+                
+                <Button Text="jouer" TextTransform="Uppercase" HorizontalOptions="Center"
+                        Padding="25,0" Command="{Binding NavigateToGame}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
