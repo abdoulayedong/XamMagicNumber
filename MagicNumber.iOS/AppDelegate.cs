@@ -21,7 +21,7 @@ namespace MagicNumber.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            FormsControls.Touch.Main.Init();
             return base.FinishedLaunching(app, options);
         }
     }

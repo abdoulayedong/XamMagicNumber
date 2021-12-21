@@ -1,4 +1,5 @@
-﻿using MagicNumber.Pages;
+﻿using FormsControls.Base;
+using MagicNumber.Pages;
 using MagicNumber.Services;
 using Xamarin.Forms;
 
@@ -10,7 +11,7 @@ namespace MagicNumber
         {
             DependencyService.Register<IMessageService, MessageService>();
             InitializeComponent();
-            var nav = new NavigationPage(new WelcomePage());
+            var nav = new AnimationNavigationPage(new WelcomePage());
             MainPage = nav;
         }
 

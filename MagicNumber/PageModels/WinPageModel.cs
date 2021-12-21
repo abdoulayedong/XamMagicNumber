@@ -1,4 +1,6 @@
-﻿namespace MagicNumber.PageModels
+﻿using MagicNumber.Models;
+
+namespace MagicNumber.PageModels
 {
     public class WinPageModel : PageModelBase
     {
@@ -9,9 +11,17 @@
             set => SetProperty(ref _magicNumber, value);
         }
 
-        public WinPageModel(int magicNumber)
+        private int _numberOfTries;
+        public int NumberOfTries
         {
-            MagicNumber = magicNumber;
+            get { return _numberOfTries; }
+            set => SetProperty(ref _numberOfTries, value);
+        }
+
+        public WinPageModel(WinModel win)
+        {
+            MagicNumber = win.NumberMagic;
+            NumberOfTries = win.NumberOfTries;
         }
     }
 }

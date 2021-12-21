@@ -5,12 +5,13 @@
              NavigationPage.HasNavigationBar="False"
              xmlns:vm="clr-namespace:MagicNumber.PageModels"
              xmlns:v="clr-namespace:MagicNumber.Views"
+             xmlns:c="clr-namespace:MagicNumber.Controls"
              BackgroundColor="{StaticResource MainColor}">
     <ContentPage.BindingContext>
         <vm:WelcomePageModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <Grid>
             <v:AnimationView/>
             <StackLayout VerticalOptions="CenterAndExpand">                
                 <Label Text="Le Nombre Magique" FontSize="50"
@@ -20,6 +21,7 @@
                 <Button Text="jouer" TextTransform="Uppercase" HorizontalOptions="Center"
                         Padding="25,0" Command="{Binding NavigateToGame}"/>
             </StackLayout>
-        </StackLayout>
+            <c:BottomBoxView VerticalOptions="End"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

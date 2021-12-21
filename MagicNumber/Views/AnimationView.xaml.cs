@@ -18,13 +18,23 @@ namespace MagicNumber.Views
             Animation();
         }
 
-        private async void Animation()
+        private async Task Animation()
         {
-            await Task.WhenAny<bool>(
-                star1.RotateTo(180, 1000, easing: Easing.Linear),
-                star2.RotateTo(180, 1000, easing: Easing.Linear),
-                star3.RotateTo(180, 1000, easing: Easing.Linear)
-                );
+            await Task.WhenAny(RotateStar(star1, 7), RotateStar(star2, 13), RotateStar(star3, 25));
         }
+
+        private async Task RotateStar(VisualElement element, int speed)
+        {
+            int endRotation = speed - 1;
+            while (true)
+            {
+                for (int i = 1; i < speed; i++)
+                {
+                    if (element.Rotation >= 360f)
+                        element.Rotation = 0;
+                    await element.RotateTo(i * (360 / endRotation), easing: Easing.Linear);
+                }
+            }
+        }       
     }
 }

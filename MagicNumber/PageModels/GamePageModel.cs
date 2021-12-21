@@ -1,4 +1,5 @@
-﻿using MagicNumber.Pages;
+﻿using MagicNumber.Models;
+using MagicNumber.Pages;
 using MagicNumber.Services;
 using System;
 using System.Windows.Input;
@@ -10,6 +11,7 @@ namespace MagicNumber.PageModels
     {
         private readonly IMessageService _messageService;
         public int NumberToSearch { get; set; }
+        public int NumberOfTries { get; set; }
         private Nullable<int> _numberEnter;
         public Nullable<int> NumberEnter
         {
@@ -27,13 +29,11 @@ namespace MagicNumber.PageModels
             NumberToSearch = new Random().Next(1, 99);
             VerifyAnswerCommand = new Command(execute: async () =>
             {
-                if (NumberEnter == null)
-                {
-                    await _messageService.ShowMessageAsync("Le nombre recherché est plus grand.");
-                }
+                NumberOfTries++;
                 if (NumberToSearch == NumberEnter)
                 {
-                    await Application.Current.MainPage.Navigation.PushAsync(new WinPage(NumberToSearch), true);
+                    WinModel win = new WinModel() { NumberOfTries = NumberOfTries, NumberMagic = NumberToSearch };
+                    await Application.Current.MainPage.Navigation.PushAsync(new WinPage(win), true);
                 }
                 else if (NumberToSearch > NumberEnter)
                 {
