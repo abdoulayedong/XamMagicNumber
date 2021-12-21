@@ -1,13 +1,10 @@
 ﻿using MagicNumber.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MagicNumber.PageModels
 {
-    public class WelcomePageModel 
+    public class WelcomePageModel
     {
         public WelcomePageModel()
         {

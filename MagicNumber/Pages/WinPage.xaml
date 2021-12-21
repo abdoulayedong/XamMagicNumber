@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagicNumber.Pages.WinPage"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             BackgroundColor="{StaticResource MainColor}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Frame CornerRadius="200" HeightRequest="600" WidthRequest="600" Padding="-150">
+                <lottie:AnimationView AnimationSource="EmbeddedResource"
+                                      Animation="Resources.9651-winner.json"
+                                      AutoPlay="True"
+                                      RepeatMode="Infinite"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand"/>
+            </Frame>
+            <Label Text="Bravo !" HorizontalOptions="Center"
+                   FontSize="50" Margin="0,25,0,0"/>
+            <Label FontSize="17" Text="{Binding MagicNumber, StringFormat='Le nombre magique etait: {0}', FallbackValue='5'}"
+                   HorizontalOptions="Center" FontAttributes="Italic"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

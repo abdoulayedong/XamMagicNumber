@@ -8,7 +8,7 @@ namespace MagicNumber.Droid.Renderers
 {
     public class CustomEntryRenderer : EntryRenderer
     {
-        public CustomEntryRenderer(Context context) : base(context){}
+        public CustomEntryRenderer(Context context) : base(context) { }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {

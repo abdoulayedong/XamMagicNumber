@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagicNumber.Views.AnimationView"
+             xmlns:local="magi">
+  
+      <StackLayout Spacing="0" HorizontalOptions="Start"
+                   TranslationX="-10" TranslationY="50" Rotation="-10">
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <BoxView Color="{StaticResource SecondaryColor}"
+                     HeightRequest="30" WidthRequest="220"/>
+            <Image x:Name="star1" Source="star.png" HeightRequest="20" WidthRequest="40" TranslationX="-20"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <BoxView Color="{StaticResource SecondaryColor}"
+                     HeightRequest="30" WidthRequest="250"/>
+            <Image x:Name="star2" Source="star.png" HeightRequest="20" WidthRequest="40" TranslationX="-20"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <BoxView Color="{StaticResource SecondaryColor}"
+                HeightRequest="30" WidthRequest="190"/>
+            <Image x:Name="star3" Source="star.png" HeightRequest="20" WidthRequest="40" TranslationX="-20"
+                   IsAnimationPlaying="True"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

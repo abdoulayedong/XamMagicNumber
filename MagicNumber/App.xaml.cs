@@ -1,7 +1,6 @@
 ﻿using MagicNumber.Pages;
-using System;
+using MagicNumber.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace MagicNumber
 {
@@ -9,8 +8,8 @@ namespace MagicNumber
     {
         public App()
         {
+            DependencyService.Register<IMessageService, MessageService>();
             InitializeComponent();
-
             var nav = new NavigationPage(new WelcomePage());
             MainPage = nav;
         }

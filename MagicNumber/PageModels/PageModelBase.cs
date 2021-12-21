@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace MagicNumber.PageModels
 {
@@ -17,7 +15,7 @@ namespace MagicNumber.PageModels
 
         protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
-            if(EqualityComparer<T>.Default.Equals(storage, value))
+            if (EqualityComparer<T>.Default.Equals(storage, value))
             {
                 return false;
             }
